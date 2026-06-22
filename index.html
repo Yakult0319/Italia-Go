@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南義大利 + 西西里 — 12天11夜旅遊攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #1A1A2E;
+    --night2: #16213E;
+    --parchment: #F5E6C8;
+    --parchment-dim: #C8B89A;
+    --gold: #C8965A;
+    --gold-light: #E8B87A;
+    --sea: #4A7FA5;
+    --sea-light: #6A9FC5;
+    --olive: #2D4A3E;
+    --brick: #8B3A3A;
+    --dim: #888;
+
+    --roma: #9B4A2A;
+    --napoli: #4A7FA5;
+    --puglia: #7A6040;
+    --matera: #5C5470;
+    --sicilia: #2D6B4A;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--night);
+    color: var(--parchment);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ─────────────────────────────── */
+  .hero {
+    background: linear-gradient(160deg, #0D0D1F 0%, #1A1A2E 50%, #1A2A1E 100%);
+    padding: 60px 40px 50px;
+    border-bottom: 1px solid rgba(200,150,90,.25);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: 'ITALIA';
+    position: absolute;
+    right: -20px; top: -10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(200,150,90,.04);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--parchment);
+    margin-bottom: 8px;
+  }
+  .hero h1 span { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--parchment-dim);
+    margin-bottom: 32px;
+  }
+
+  .meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .meta-badge {
+    background: rgba(200,150,90,.12);
+    border: 1px solid rgba(200,150,90,.3);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* ── ROUTE BAR ────────────────────────── */
+  .route-bar {
+    background: var(--night2);
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    overflow-x: auto;
+  }
+  .route-city {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .route-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .route-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .route-days {
+    font-size: 10px;
+    color: var(--dim);
+    margin-top: 1px;
+  }
+  .route-arrow {
+    color: rgba(255,255,255,.2);
+    margin: 0 10px;
+    font-size: 13px;
+  }
+
+  /* ── LAYOUT ───────────────────────────── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .section {
+    padding: 48px 40px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .icon { font-size: 22px; }
+  .section-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  /* ── DAY CARDS ────────────────────────── */
+  .days-grid { display: flex; flex-direction: column; gap: 0; }
+
+  .city-block { margin-bottom: 36px; }
+  .city-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .city-bar {
+    width: 4px;
+    height: 28px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .city-label-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .city-label-nights {
+    font-size: 11px;
+    color: var(--dim);
+    background: rgba(255,255,255,.06);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .day-card {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    transition: border-color .2s;
+    align-items: stretch;
+  }
+  .day-card:hover { border-color: rgba(200,150,90,.25); }
+
+  .day-sidebar {
+    width: 5px;
+    flex-shrink: 0;
+  }
+  .day-number-col {
+    width: 70px;
+    flex-shrink: 0;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 1px solid rgba(255,255,255,.06);
+  }
+  .day-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .day-num-label { font-size: 10px; color: var(--dim); letter-spacing: 1px; }
+  .day-date {
+    font-size: 10px;
+    color: var(--dim);
+    margin-top: 6px;
+    text-align: center;
+    font-family: monospace;
+  }
+
+  .day-body { padding: 16px 20px; flex: 1; }
+  .day-headline {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--parchment);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .day-events { display: flex; flex-direction: column; gap: 6px; }
+  .event-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .event-type {
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .type-景點 { background: rgba(74,127,165,.25); color: #7BBDE0; }
+  .type-美食 { background: rgba(94,123,94,.25); color: #8EC88E; }
+  .type-交通 { background: rgba(122,96,64,.25); color: #C8A878; }
+  .type-班機 { background: rgba(61,90,128,.25); color: #8AAED4; }
+  .type-活動 { background: rgba(138,74,94,.25); color: #D49AB0; }
+  .type-住宿 { background: rgba(92,84,112,.25); color: #B0A8CC; }
+  .type-購物 { background: rgba(184,146,58,.25); color: #D4BC6A; }
+
+  .event-text { font-size: 13px; color: var(--parchment-dim); line-height: 1.5; }
+  .event-note { font-size: 11px; color: var(--dim); margin-top: 2px; }
+
+  /* ── INFO SECTIONS ────────────────────── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 4px;
+  }
+  .info-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .info-card-title {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .info-card p, .info-card li {
+    font-size: 13px;
+    color: var(--parchment-dim);
+    line-height: 1.7;
+  }
+  .info-card ul { padding-left: 16px; }
+  .info-card li { margin-bottom: 3px; }
+
+  /* ── FOOD GRID ────────────────────────── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .food-card {
+    background: rgba(45,74,62,.2);
+    border: 1px solid rgba(45,74,62,.5);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .food-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 4px;
+  }
+  .food-region {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .food-desc { font-size: 12px; color: var(--parchment-dim); line-height: 1.6; margin-bottom: 8px; }
+  .food-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .food-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(200,150,90,.1);
+    color: var(--gold-light);
+    border: 1px solid rgba(200,150,90,.2);
+  }
+
+  /* ── TRANSPORT TABLE ──────────────────── */
+  .trans-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+  .trans-table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(200,150,90,.2);
+    font-weight: 600;
+  }
+  .trans-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,.04);
+    color: var(--parchment-dim);
+    vertical-align: top;
+  }
+  .trans-table tr:last-child td { border-bottom: none; }
+  .trans-table tr:hover td { background: rgba(255,255,255,.02); }
+  .trans-seg { font-weight: 600; color: var(--parchment); }
+
+  /* ── BUDGET ───────────────────────────── */
+  .budget-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 110px);
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    padding: 10px 0;
+    font-size: 13px;
+    align-items: center;
+  }
+  .budget-row.header {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    padding-bottom: 8px;
+  }
+  .budget-row:last-child { border-bottom: none; }
+  .budget-label { color: var(--parchment-dim); }
+  .budget-val { text-align: right; font-family: monospace; font-size: 12px; }
+  .budget-val.lo { color: #8EC88E; }
+  .budget-val.mid { color: var(--gold-light); }
+  .budget-val.hi { color: #D49AB0; }
+
+  .budget-total-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 110px);
+    gap: 0;
+    margin-top: 12px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(200,150,90,.3);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .budget-total-label {
+    font-family: 'Playfair Display', serif;
+    color: var(--parchment);
+  }
+
+  /* ── CLIMATE TABLE ────────────────────── */
+  .climate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .climate-card {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .climate-city {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 6px;
+  }
+  .climate-temp {
+    font-size: 22px;
+    font-family: monospace;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .climate-desc { font-size: 11px; color: var(--dim); margin-top: 4px; }
+
+  /* ── TIPS ─────────────────────────────── */
+  .tip-list { display: flex; flex-direction: column; gap: 10px; }
+  .tip-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 16px;
+    background: rgba(255,255,255,.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--gold);
+    font-size: 13px;
+    color: var(--parchment-dim);
+    line-height: 1.6;
+  }
+  .tip-item.warn { border-left-color: var(--brick); }
+  .tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── ACCOM ────────────────────────────── */
+  .accom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .accom-card {
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .accom-header {
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .accom-body { padding: 14px 16px; }
+  .accom-rec {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--parchment);
+    margin-bottom: 4px;
+  }
+  .accom-desc { font-size: 12px; color: var(--parchment-dim); line-height: 1.6; }
+  .accom-price {
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 8px;
+    font-family: monospace;
+  }
+
+  /* ── FOOTER ───────────────────────────── */
+  .footer {
+    background: var(--night2);
+    padding: 32px 40px;
+    text-align: center;
+    border-top: 1px solid rgba(200,150,90,.15);
+    font-size: 12px;
+    color: var(--dim);
+  }
+  .footer strong { color: var(--gold); }
+
+  /* ── DAY THUMBNAIL ───────────────────── */
+  .day-card { align-items: stretch; }
+
+  .day-thumb {
+    width: 200px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+  .thumb-upload {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.03);
+    border-right: 1px solid rgba(255,255,255,.07);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+  }
+  .thumb-upload:hover {
+    background: rgba(200,150,90,.08);
+    border-right-color: rgba(200,150,90,.25);
+  }
+  .thumb-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgba(200,150,90,.45);
+    pointer-events: none;
+    padding: 8px;
+    text-align: center;
+  }
+  .thumb-placeholder span {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(200,150,90,.65);
+    letter-spacing: .5px;
+  }
+  .thumb-hint {
+    font-size: 9px !important;
+    color: rgba(200,150,90,.35) !important;
+    font-weight: 400 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase;
+  }
+  .thumb-preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity .3s;
+  }
+  .thumb-upload:hover .thumb-preview { opacity: .88; }
+  .thumb-upload.has-image .thumb-placeholder { display: none; }
+
+  @media (max-width: 600px) {
+    .hero, .section { padding: 32px 20px; }
+    .route-bar { padding: 16px 20px; }
+    .budget-row, .budget-total-row { grid-template-columns: 1fr repeat(3, 80px); font-size: 12px; }
+    .day-number-col { width: 56px; }
+    .day-thumb { width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">✈ 2024.12.23 — 2025.01.03 &nbsp;|&nbsp; 12天11夜</div>
+    <h1>南義大利<br><span>+ 西西里</span></h1>
+    <div class="hero-sub">情侶輕旅行 · Roma → Napoli → Puglia → Sicilia</div>
+    <div class="meta-strip">
+      <div class="meta-badge">👫 情侶同行</div>
+      <div class="meta-badge">🏖 輕鬆旅遊</div>
+      <div class="meta-badge">🚗 西西里自駕</div>
+      <div class="meta-badge">✈ 國內航班 × 2</div>
+      <div class="meta-badge">🎄 聖誕 + 跨年</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ROUTE BAR ── -->
+<div class="route-bar">
+  <div class="container" style="display:flex;align-items:center;flex-wrap:wrap;gap:0;">
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--roma)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Roma</div><div class="route-days">Day 1–2</div></div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--napoli)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Napoli</div><div class="route-days">Day 3–4</div></div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--puglia)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Alberobello</div><div class="route-days">Day 5</div></div>
+    </div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--matera)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Matera</div><div class="route-days">Day 6</div></div>
+    </div>
+    <div class="route-arrow">→✈→</div>
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--sicilia)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Sicilia</div><div class="route-days">Day 7–11</div></div>
+    </div>
+    <div class="route-arrow">→✈→</div>
+    <div class="route-city">
+      <div class="route-dot" style="background:var(--roma)"></div>
+      <div><div class="route-name" style="color:var(--parchment)">Roma</div><div class="route-days">Day 12</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ITINERARY ── -->
+<div class="section">
+  <div class="container">
+    <div class="section-sub">Day by Day</div>
+    <div class="section-title"><span class="icon">🗓</span> 完整行程</div>
+
+    <div class="days-grid">
+
+      <!-- ROMA -->
+      <div class="city-block">
+        <div class="city-label">
+          <div class="city-bar" style="background:var(--roma)"></div>
+          <div class="city-label-text" style="color:var(--parchment)">Roma</div>
+          <div class="city-label-nights">2晚</div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--roma)"></div>
+          <div class="day-number-col">
+            <div class="day-num">1</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/23<br>週一</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day1" onclick="document.getElementById('inp_thumb_Day1').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day1" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day1')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 1</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day1" class="thumb-preview" style="display:none" alt="羅馬競技場">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">抵達羅馬 · 競技場初探</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-班機">班機</div>
+                <div><div class="event-text">07:15 Roma FCO 抵達</div><div class="event-note">Leonardo Express 至 Termini €14｜32分鐘</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-住宿">住宿</div>
+                <div><div class="event-text">入住飯店、休息</div><div class="event-note">推薦 Trastevere 或 Campo de' Fiori 周邊</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">羅馬競技場 + 古羅馬廣場</div><div class="event-note">套票 €18–22｜下午 13:30 進場，開放至 16:30</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">特雷維噴泉夜遊</div><div class="event-note">免費｜夜間人少最美，情侶投幣許願</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--roma)"></div>
+          <div class="day-number-col">
+            <div class="day-num">2</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/24<br>週二</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day2" onclick="document.getElementById('inp_thumb_Day2').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day2" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day2')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 2</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day2" class="thumb-preview" style="display:none" alt="梵蒂岡西斯汀禮拜堂">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">🎄 聖誕平安夜 · 梵蒂岡</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">梵蒂岡博物館 + 西斯汀禮拜堂</div><div class="event-note">€20–27｜務必提前線上預約！09:00 開館進</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">聖彼得大教堂 + 圓頂</div><div class="event-note">教堂免費｜圓頂 €8–10｜下午參觀</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-活動">活動</div>
+                <div><div class="event-text">聖彼得廣場平安夜氣氛</div><div class="event-note">免費｜21:00 後廣場聖誕裝飾與人潮</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAPOLI -->
+      <div class="city-block">
+        <div class="city-label">
+          <div class="city-bar" style="background:var(--napoli)"></div>
+          <div class="city-label-text" style="color:var(--parchment)">Napoli</div>
+          <div class="city-label-nights">2晚</div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--napoli)"></div>
+          <div class="day-number-col">
+            <div class="day-num">3</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/25<br>週三</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day3" onclick="document.getElementById('inp_thumb_Day3').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day3" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day3')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 3</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day3" class="thumb-preview" style="display:none" alt="那不勒斯灣">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">🎅 聖誕節 · 南下那不勒斯</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">Roma → Napoli 高鐵</div><div class="event-note">Frecciarossa｜約1h10m｜€20–50｜提前訂票</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">那不勒斯歷史中心漫步</div><div class="event-note">UNESCO世界遺產街區｜下午悠閒逛</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-購物">購物</div>
+                <div><div class="event-text">Via San Gregorio Armeno 聖誕馬槽街</div><div class="event-note">手工 Presepe 馬槽公仔，聖誕節最熱鬧</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">拿坡里披薩晚餐</div><div class="event-note">L'Antica Pizzeria da Michele 或 Sorbillo｜€5–9</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--napoli)"></div>
+          <div class="day-number-col">
+            <div class="day-num">4</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/26<br>週四</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day4" onclick="document.getElementById('inp_thumb_Day4').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day4" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day4')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 4</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day4" class="thumb-preview" style="display:none" alt="龐貝古城">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">龐貝古城全天</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">龐貝古城（全天）</div><div class="event-note">€18（冬季有時 €11）｜Circumvesuviana 線 35 分鐘｜建議租語音導覽</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">海鮮晚餐</div><div class="event-note">Frittura di Paranza 炸海鮮 €12–18｜那不勒斯港口周邊</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUGLIA -->
+      <div class="city-block">
+        <div class="city-label">
+          <div class="city-bar" style="background:var(--puglia)"></div>
+          <div class="city-label-text" style="color:var(--parchment)">Alberobello → Matera</div>
+          <div class="city-label-nights">各1晚</div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--puglia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">5</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/27<br>週五</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day5" onclick="document.getElementById('inp_thumb_Day5').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day5" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day5')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 5</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day5" class="thumb-preview" style="display:none" alt="Alberobello 圓錐屋">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">童話小鎮 · Trulli 圓錐屋</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">Napoli → Alberobello</div><div class="event-note">火車轉 FSE 區間車（Bari 轉）約3小時｜€15–20</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Trulli 特魯利屋群</div><div class="event-note">UNESCO世界遺產｜Rione Monti + Aia Piccola｜免費入場</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-住宿">住宿</div>
+                <div><div class="event-text">入住圓錐屋 Trullo</div><div class="event-note">一生一次體驗！€80–180/晚｜Airbnb/Booking搜「trullo Alberobello」</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--matera)"></div>
+          <div class="day-number-col">
+            <div class="day-num">6</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/28<br>週六</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day6" onclick="document.getElementById('inp_thumb_Day6').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day6" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day6')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 6</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day6" class="thumb-preview" style="display:none" alt="Matera 石窟古城">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">石窟古城 · Matera</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Alberobello 上午補逛拍照</div><div class="event-note">清晨人少光線最美</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">Alberobello → Matera</div><div class="event-note">巴士約1.5小時｜€8–15</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Sassi di Matera 石窟古城</div><div class="event-note">9000年人居遺址｜UNESCO世界遺產｜007取景地</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">日落夜景</div><div class="event-note">全行程最美夜景之一，石窟城燈亮起後絕美</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SICILIA -->
+      <div class="city-block">
+        <div class="city-label">
+          <div class="city-bar" style="background:var(--sicilia)"></div>
+          <div class="city-label-text" style="color:var(--parchment)">Sicilia</div>
+          <div class="city-label-nights">5晚 · 自駕</div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--sicilia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">7</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/29<br>週日</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day7" onclick="document.getElementById('inp_thumb_Day7').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day7" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day7')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 7</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day7" class="thumb-preview" style="display:none" alt="巴勒莫大教堂">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">飛往西西里 · Palermo</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Matera 大教堂</div><div class="event-note">13世紀羅馬式建築｜制高點視野絕佳｜免費</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-班機">班機</div>
+                <div><div class="event-text">Bari BRI → Palermo PMO</div><div class="event-note">約1小時｜€30–80｜Ryanair/ITA/easyJet｜西西里自駕開始</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">Vucciria 市場夜遊</div><div class="event-note">Arancini 炸飯糰 €2–3｜街頭小食天堂</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--sicilia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">8</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/30<br>週一</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day8" onclick="document.getElementById('inp_thumb_Day8').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day8" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day8')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 8</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day8" class="thumb-preview" style="display:none" alt="諾曼王宮帕拉提那禮拜堂">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">Palermo 全天 → Agrigento</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">諾曼王宮 + 帕拉提那禮拜堂</div><div class="event-note">€12｜阿拉伯－諾曼黃金馬賽克｜09:00 開館即入</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">巴拉羅市場午餐</div><div class="event-note">全義最熱鬧傳統市場｜邊走邊吃最道地</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">巴勒莫大教堂 + 四角廣場</div><div class="event-note">免費｜阿拉伯/諾曼/哥德三式合體建築</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">自駕前往 Agrigento</div><div class="event-note">約2小時，傍晚抵達</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--sicilia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">9</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">12/31<br>週二</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day9" onclick="document.getElementById('inp_thumb_Day9').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day9" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day9')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 9</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day9" class="thumb-preview" style="display:none" alt="神殿之谷">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">🥂 神殿之谷 · 跨年夜 Siracusa</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Valle dei Templi 神殿之谷</div><div class="event-note">€13.50｜UNESCO｜早上光線與人潮最佳</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">自駕 Agrigento → Siracusa</div><div class="event-note">約2小時</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">歐提嘉島（Ortigia）漫步</div><div class="event-note">阿波羅神殿、大教堂廣場，迷人老城島</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-活動">活動</div>
+                <div><div class="event-text">跨年夜 in Siracusa</div><div class="event-note">Piazza Duomo 廣場活動｜小鎮人情味十足｜提前訂晚餐</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--sicilia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">10</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">01/01<br>週三</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day10" onclick="document.getElementById('inp_thumb_Day10').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day10" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day10')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 10</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day10" class="thumb-preview" style="display:none" alt="Taormina 希臘劇場">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">🎆 元旦 · Taormina 希臘劇場</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">歐提嘉島元旦晨遊</div><div class="event-note">早市、咖啡、悠閒散步</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">自駕 Siracusa → Taormina</div><div class="event-note">約1.5小時｜老城停外圍停車場步行上山</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-景點">景點</div>
+                <div><div class="event-text">Taormina 希臘劇場</div><div class="event-note">€10｜懸崖上遠眺埃特納火山 + 愛奧尼亞海｜全程最浪漫</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">Corso Umberto 漫步 + 開心果冰淇淋</div><div class="event-note">Bronte 開心果 €3–4｜必吃</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--sicilia)"></div>
+          <div class="day-number-col">
+            <div class="day-num">11</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">01/02<br>週四</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day11" onclick="document.getElementById('inp_thumb_Day11').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day11" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day11')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 11</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day11" class="thumb-preview" style="display:none" alt="Trastevere 石板街道">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">Taormina 收尾 · 飛回 Roma</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-購物">購物</div>
+                <div><div class="event-text">Taormina 最後補逛 + 伴手禮</div><div class="event-note">開心果製品、西西里陶器</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">自駕 Taormina → Catania 機場還車</div><div class="event-note">約1小時</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-班機">班機</div>
+                <div><div class="event-text">Catania CTA → Roma FCO</div><div class="event-note">約1.5小時｜€40–100｜選下午班機</div></div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-美食">美食</div>
+                <div><div class="event-text">Trastevere 最後晚餐</div><div class="event-note">石板路燈光下浪漫收尾｜提前訂位</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROMA RETURN -->
+      <div class="city-block">
+        <div class="city-label">
+          <div class="city-bar" style="background:var(--roma)"></div>
+          <div class="city-label-text" style="color:var(--parchment)">Roma · 回程</div>
+        </div>
+        <div class="day-card">
+          <div class="day-sidebar" style="background:var(--roma)"></div>
+          <div class="day-number-col">
+            <div class="day-num">12</div>
+            <div class="day-num-label">DAY</div>
+            <div class="day-date">01/03<br>週五</div>
+          </div>
+          <div class="day-thumb">
+            <div class="thumb-upload" id="zone_thumb_Day12" onclick="document.getElementById('inp_thumb_Day12').click()" title="點擊上傳縮圖">
+              <input type="file" id="inp_thumb_Day12" accept="image/*" style="display:none" onchange="loadThumb(this,'zone_thumb_Day12')">
+              <div class="thumb-placeholder">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Day 12</span>
+                <span class="thumb-hint">點擊上傳</span>
+              </div>
+              <img id="img_thumb_Day12" class="thumb-preview" style="display:none" alt="Roma FCO 機場">
+            </div>
+          </div>
+          <div class="day-body">
+            <div class="day-headline">✈ 返程</div>
+            <div class="day-events">
+              <div class="event-row">
+                <div class="event-type type-交通">交通</div>
+                <div><div class="event-text">前往 Roma FCO 機場</div><div class="event-note">08:00 前出發｜Leonardo Express 或計程車 €50</div>
+        </div>
+              </div>
+              <div class="event-row">
+                <div class="event-type type-班機">班機</div>
+                <div><div class="event-text">10:25 Roma FCO 起飛</div><div class="event-note">旅程圓滿結束</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /days-grid -->
+  </div>
+</div>
+
+<!-- ── 氣候 ── -->
+<div class="section" style="background:rgba(255,255,255,.01)">
+  <div class="container">
+    <div class="section-sub">12月底 – 1月初</div>
+    <div class="section-title"><span class="icon">🌤</span> 氣候概況</div>
+    <div class="climate-grid">
+      <div class="climate-card">
+        <div class="climate-city">Roma</div>
+        <div class="climate-temp">5–13°C</div>
+        <div class="climate-desc">偶有陰雨，早晚冷，石板路多注意防滑鞋</div>
+      </div>
+      <div class="climate-card">
+        <div class="climate-city">Napoli</div>
+        <div class="climate-temp">8–14°C</div>
+        <div class="climate-desc">比羅馬稍暖，海風濕潤</div>
+      </div>
+      <div class="climate-card">
+        <div class="climate-city">Alberobello / Matera</div>
+        <div class="climate-temp">4–12°C</div>
+        <div class="climate-desc">風大，夜間偏冷，建議備厚外套</div>
+      </div>
+      <div class="climate-card">
+        <div class="climate-city">Sicilia</div>
+        <div class="climate-temp">10–17°C</div>
+        <div class="climate-desc">全程最暖，日照充足，偶有雨</div>
+      </div>
+    </div>
+    <div class="tip-list">
+      <div class="tip-item"><div class="tip-icon">👕</div>洋蔥式穿法：內刷毛 + 中厚外套 + 防風防水外層，搭配舒適防滑步行鞋</div>
+      <div class="tip-item warn"><div class="tip-icon">⚠️</div>聖誕節（12/25）與元旦（01/01）節日氛圍佳，但部分餐廳休息，節慶餐廳請<strong>提前訂位</strong></div>
+      <div class="tip-item warn"><div class="tip-icon">⚠️</div>西西里自駕注意 <strong>ZTL</strong> 限制區域，老城區禁止開車進入，違規罰單會寄回台灣</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 美食 ── -->
+<div class="section">
+  <div class="container">
+    <div class="section-sub">Must Eat</div>
+    <div class="section-title"><span class="icon">🍽</span> 必吃美食</div>
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-name">Pizza Napoletana</div>
+        <div class="food-region">那不勒斯</div>
+        <div class="food-desc">世界披薩發源地，薄脆焦香邊、柔軟中心，認證「真拿坡里披薩」</div>
+        <div class="food-meta"><span class="food-tag">€5–9</span><span class="food-tag">da Michele / Sorbillo</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Pizza Fritta</div>
+        <div class="food-region">那不勒斯</div>
+        <div class="food-desc">街頭油炸口袋披薩，最平民的那不勒斯滋味</div>
+        <div class="food-meta"><span class="food-tag">€2–4</span><span class="food-tag">街頭小攤</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Frittura di Paranza</div>
+        <div class="food-region">那不勒斯</div>
+        <div class="food-desc">新鮮小魚蝦透抽裹粉油炸，配檸檬汁，鮮甜無比</div>
+        <div class="food-meta"><span class="food-tag">€12–18</span><span class="food-tag">港口周邊餐廳</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Orecchiette con Cime di Rapa</div>
+        <div class="food-region">普利亞</div>
+        <div class="food-desc">耳朵麵佐蕪菁葉，普利亞靈魂料理，苦香鮮鹹</div>
+        <div class="food-meta"><span class="food-tag">€10–14</span><span class="food-tag">傳統餐廳</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Burrata</div>
+        <div class="food-region">普利亞</div>
+        <div class="food-desc">普利亞原產，外層莫扎瑞拉內含奶油起司，當地最新鮮</div>
+        <div class="food-meta"><span class="food-tag">€8–12</span><span class="food-tag">超市 / 起司小店</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Arancini</div>
+        <div class="food-region">西西里</div>
+        <div class="food-desc">炸飯糰，肉醬/起司/菠菜口味，西西里最代表性街頭小食</div>
+        <div class="food-meta"><span class="food-tag">€2–3</span><span class="food-tag">Antica Focacceria（1834年）</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Pistacchio di Bronte</div>
+        <div class="food-region">西西里</div>
+        <div class="food-desc">埃特納火山腳下頂級開心果，冰淇淋、醬料、巧克力皆絕</div>
+        <div class="food-meta"><span class="food-tag">冰淇淋 €3–4</span><span class="food-tag">Taormina 冰淇淋店</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Cassata Siciliana</div>
+        <div class="food-region">西西里</div>
+        <div class="food-desc">色彩繽紛杏仁膏夾層甜點，節慶必備，12月份最常見</div>
+        <div class="food-meta"><span class="food-tag">€4–6</span><span class="food-tag">巴勒莫糕餅鋪</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Pesce Spada</div>
+        <div class="food-region">西西里</div>
+        <div class="food-desc">旗魚以橄欖、酸豆、番茄燉煮，鮮甜濃郁的西西里漁業料理</div>
+        <div class="food-meta"><span class="food-tag">€18–28</span><span class="food-tag">Siracusa / Taormina 海鮮餐廳</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Caffè Napoletano</div>
+        <div class="food-region">那不勒斯</div>
+        <div class="food-desc">比羅馬更濃烈的 Espresso，站吧檯喝是當地習慣</div>
+        <div class="food-meta"><span class="food-tag">€1–1.5</span><span class="food-tag">Gran Caffè Gambrinus</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Nero d'Avola</div>
+        <div class="food-region">西西里</div>
+        <div class="food-desc">西西里原生紅酒，果香濃郁單寧柔和，搭當地料理絕配</div>
+        <div class="food-meta"><span class="food-tag">€12–25/瓶</span><span class="food-tag">任何西西里餐廳</span></div>
+      </div>
+      <div class="food-card">
+        <div class="food-name">Limoncello</div>
+        <div class="food-region">那不勒斯</div>
+        <div class="food-desc">那不勒斯產最正宗，飯後一小杯，或買瓶裝帶回當伴手禮</div>
+        <div class="food-meta"><span class="food-tag">€10–20/瓶</span><span class="food-tag">那不勒斯任何酒類小店</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 交通 ── -->
+<div class="section" style="background:rgba(255,255,255,.01)">
+  <div class="container">
+    <div class="section-sub">Getting Around</div>
+    <div class="section-title"><span class="icon">🚆</span> 交通資訊</div>
+
+    <div style="margin-bottom:28px">
+      <div style="font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">機場進市區（Roma FCO）</div>
+      <table class="trans-table">
+        <thead><tr><th>方式</th><th>時間</th><th>費用</th><th>備注</th></tr></thead>
+        <tbody>
+          <tr><td class="trans-seg">Leonardo Express</td><td>32分鐘</td><td>€14</td><td>直達 Termini，最方便</td></tr>
+          <tr><td class="trans-seg">區間車 FL1</td><td>45–60分</td><td>€8</td><td>停多站，需轉乘</td></tr>
+          <tr><td class="trans-seg">計程車</td><td>45–60分</td><td>€50 固定</td><td>市區固定費率，無需議價</td></tr>
+          <tr><td class="trans-seg">巴士</td><td>50–70分</td><td>€6–7</td><td>最便宜，塞車風險較高</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-bottom:28px">
+      <div style="font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">城市間長途移動</div>
+      <table class="trans-table">
+        <thead><tr><th>區段</th><th>方式</th><th>時間</th><th>費用</th></tr></thead>
+        <tbody>
+          <tr><td class="trans-seg">Roma → Napoli</td><td>高鐵 Frecciarossa</td><td>1h10m</td><td>€20–50</td></tr>
+          <tr><td class="trans-seg">Napoli → Alberobello</td><td>火車轉 FSE 區間（Bari 轉）</td><td>約3小時</td><td>€15–20</td></tr>
+          <tr><td class="trans-seg">Alberobello → Matera</td><td>巴士 Marozzi/FlixBus</td><td>1.5小時</td><td>€8–15</td></tr>
+          <tr><td class="trans-seg">Matera → Palermo ✈</td><td>Bari BRI → Palermo PMO</td><td>約1小時</td><td>€30–80</td></tr>
+          <tr><td class="trans-seg">Catania → Roma ✈</td><td>CTA → Roma FCO</td><td>約1.5小時</td><td>€40–100</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">羅馬地鐵</div>
+        <ul>
+          <li>A、B、C 線覆蓋主要景點</li>
+          <li>單程 €1.50（100分鐘內轉乘）</li>
+          <li>48hr 券 €7 / 72hr 券 €12.50</li>
+          <li>計程車用 <strong>itTaxi App</strong>，避免詐騙</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">那不勒斯交通</div>
+        <ul>
+          <li>地鐵 1、2 號線</li>
+          <li>Circumvesuviana 線往龐貝</li>
+          <li><strong>Campania ArteCard</strong> 3天 €32</li>
+          <li>包含景點免費 + 交通，觀光首選</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">西西里自駕</div>
+        <ul>
+          <li>PMO 取車，CTA 還車（單向）</li>
+          <li>老城區注意 <strong>ZTL</strong> 禁入區</li>
+          <li>Taormina、Cefalù 需停外圍停車場</li>
+          <li>建議選大型租車公司含完整保險</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 住宿 ── -->
+<div class="section">
+  <div class="container">
+    <div class="section-sub">Where to Stay</div>
+    <div class="section-title"><span class="icon">🏨</span> 住宿建議</div>
+    <div class="accom-grid">
+      <div class="accom-card">
+        <div class="accom-header" style="background:rgba(155,74,42,.25);color:#D4906A">Roma · 推薦區域</div>
+        <div class="accom-body">
+          <div class="accom-rec">Trastevere ⭐ 情侶首選</div>
+          <div class="accom-desc">浪漫石板巷弄、夜間燈光氛圍絕佳，餐廳選擇豐富。缺點：夜間偶有吵鬧。</div>
+          <div class="accom-price">€90–180 / 晚</div>
+          <div style="margin-top:10px">
+            <div class="accom-rec">Campo de' Fiori / Navona</div>
+            <div class="accom-desc">精華中心，步行至各景點最方便，價格較高。</div>
+            <div class="accom-price">€120–250 / 晚</div>
+          </div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-header" style="background:rgba(74,127,165,.25);color:#7BBDE0">Napoli</div>
+        <div class="accom-body">
+          <div class="accom-rec">Chiaia 區 ⭐ 推薦</div>
+          <div class="accom-desc">精品、安全、靠海，環境最佳。Centro Storico 氛圍更濃但複雜。避免 Piazza Garibaldi 車站周邊。</div>
+          <div class="accom-price">€70–150 / 晚</div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-header" style="background:rgba(122,96,64,.25);color:#C8A878">Alberobello</div>
+        <div class="accom-body">
+          <div class="accom-rec">Trullo 圓錐屋 ⭐⭐ 必住</div>
+          <div class="accom-desc">直接住在世界遺產建築內！Airbnb / Booking.com 搜「trullo Alberobello」，一生一次體驗。</div>
+          <div class="accom-price">€80–180 / 晚</div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-header" style="background:rgba(92,84,112,.25);color:#B0A8CC">Matera</div>
+        <div class="accom-body">
+          <div class="accom-rec">Sassi 石窟旅館</div>
+          <div class="accom-desc">Sextantio Le Grotte della Civita 等石窟改建旅館是頂級體驗。一般 B&B 亦有好選擇。</div>
+          <div class="accom-price">B&B €70–130 / 石窟豪華 €200–400</div>
+        </div>
+      </div>
+      <div class="accom-card">
+        <div class="accom-header" style="background:rgba(45,107,74,.25);color:#6ABF8E">Sicilia</div>
+        <div class="accom-body">
+          <div class="accom-rec">各城市建議</div>
+          <div class="accom-desc">
+            Palermo：Kalsa 歷史中心<br>
+            Agrigento：神殿之谷附近小鎮<br>
+            Siracusa：歐提嘉島上最佳<br>
+            Taormina：景觀旅館（價高但值得）
+          </div>
+          <div class="accom-price">Taormina €120–300 / 其他 €60–120</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 預算 ── -->
+<div class="section" style="background:rgba(255,255,255,.01)">
+  <div class="container">
+    <div class="section-sub">Budget Estimate</div>
+    <div class="section-title"><span class="icon">💶</span> 預算估算</div>
+
+    <div style="margin-bottom:32px">
+      <div style="font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">每日基本開銷（兩人合計）</div>
+      <div class="budget-row header">
+        <div>項目</div>
+        <div class="budget-val" style="color:var(--gold)">預算型</div>
+        <div class="budget-val" style="color:var(--gold)">舒適型</div>
+        <div class="budget-val" style="color:var(--gold)">享受型</div>
+      </div>
+      <div class="budget-row"><div class="budget-label">住宿 / 晚</div><div class="budget-val lo">€80–120</div><div class="budget-val mid">€130–200</div><div class="budget-val hi">€200–400</div></div>
+      <div class="budget-row"><div class="budget-label">餐飲（早午晚）</div><div class="budget-val lo">€40–60</div><div class="budget-val mid">€70–100</div><div class="budget-val hi">€120–200</div></div>
+      <div class="budget-row"><div class="budget-label">景點門票</div><div class="budget-val lo">€15–25</div><div class="budget-val mid">€25–40</div><div class="budget-val hi">€40–60</div></div>
+      <div class="budget-row"><div class="budget-label">城市內交通</div><div class="budget-val lo">€10–15</div><div class="budget-val mid">€15–25</div><div class="budget-val hi">€25–50</div></div>
+      <div class="budget-row"><div class="budget-label">購物 / 零食</div><div class="budget-val lo">€10–20</div><div class="budget-val mid">€20–50</div><div class="budget-val hi">€50–150</div></div>
+      <div class="budget-total-row">
+        <div class="budget-total-label">每日小計</div>
+        <div class="budget-val lo">€155–240</div>
+        <div class="budget-val mid">€260–415</div>
+        <div class="budget-val hi">€435–860</div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size:13px;font-weight:600;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">固定大項費用（兩人）</div>
+      <table class="trans-table">
+        <thead><tr><th>項目</th><th>估算</th></tr></thead>
+        <tbody>
+          <tr><td>國內航班 Bari→Palermo + Catania→Roma</td><td style="color:var(--gold-light);font-family:monospace">€100–200</td></tr>
+          <tr><td>西西里租車 4天（含保險）</td><td style="color:var(--gold-light);font-family:monospace">€150–300</td></tr>
+          <tr><td>長途火車（Roma↔Napoli 等）</td><td style="color:var(--gold-light);font-family:monospace">€100–160</td></tr>
+          <tr><td>梵蒂岡博物館預約票（兩人）</td><td style="color:var(--gold-light);font-family:monospace">€50–60</td></tr>
+          <tr><td>龐貝門票（兩人）</td><td style="color:var(--gold-light);font-family:monospace">€36</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:20px;padding:16px;background:rgba(200,150,90,.08);border:1px solid rgba(200,150,90,.2);border-radius:8px;font-size:13px;color:var(--parchment-dim)">
+        <strong style="color:var(--gold)">12天11夜總預算參考（兩人，不含國際機票）</strong><br>
+        預算型 <span style="color:#8EC88E;font-family:monospace">€2,000–2,800</span> ｜
+        舒適型 <span style="color:var(--gold-light);font-family:monospace">€3,200–4,500</span> ｜
+        享受型 <span style="color:#D49AB0;font-family:monospace">€5,500–8,000</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 購物 ── -->
+<div class="section">
+  <div class="container">
+    <div class="section-sub">Shopping & Souvenirs</div>
+    <div class="section-title"><span class="icon">🛍</span> 購物 & 伴手禮</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">那不勒斯</div>
+        <ul>
+          <li>手工 Presepe 聖誕馬槽公仔（Via San Gregorio Armeno）</li>
+          <li>Limoncello 檸檬酒</li>
+          <li>San Marzano 番茄罐頭</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">普利亞</div>
+        <ul>
+          <li>手工 Orecchiette 生麵條</li>
+          <li>Taralli 硬麵包圈（零食）</li>
+          <li>頂級橄欖油</li>
+          <li>Matera 普利亞風格陶器</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">西西里</div>
+        <ul>
+          <li>Bronte 開心果醬 / 巧克力</li>
+          <li>Marsala 甜酒</li>
+          <li>Caltagirone 彩繪陶器</li>
+          <li>Cannoli 外皮餅乾</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">退稅資訊</div>
+        <ul>
+          <li>同店消費滿 <strong>€154.94</strong> 可申請</li>
+          <li>實拿退稅約 <strong>11–15%</strong>（扣手續費）</li>
+          <li>FCO 機場海關蓋章後至退稅櫃台</li>
+          <li>推薦 Global Blue / Planet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="footer">
+  <strong>南義大利 + 西西里 12天11夜</strong> · 2024.12.23 — 2025.01.03<br>
+  Roma · Napoli · Alberobello · Matera · Palermo · Agrigento · Siracusa · Taormina<br>
+  <span style="color:rgba(255,255,255,.2);font-size:10px;margin-top:8px;display:block">梵蒂岡博物館務必提前預約 · 西西里 ZTL 注意 · 節慶餐廳提前訂位</span>
+</div>
+
+<script>
+function loadThumb(input, zoneId) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var zone = document.getElementById(zoneId);
+    var img = zone.querySelector('.thumb-preview');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    zone.classList.add('has-image');
+    // Save to localStorage so image persists on reload
+    try { localStorage.setItem('thumb_' + zoneId, e.target.result); } catch(ex) {}
+  };
+  reader.readAsDataURL(file);
+}
+
+// Restore saved thumbnails on load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.thumb-upload').forEach(function(zone) {
+    var key = 'thumb_' + zone.id;
+    try {
+      var saved = localStorage.getItem(key);
+      if (saved) {
+        var img = zone.querySelector('.thumb-preview');
+        img.src = saved;
+        img.style.display = 'block';
+        zone.classList.add('has-image');
+      }
+    } catch(ex) {}
+  });
+});
+</script>
+</body>
+</html>
